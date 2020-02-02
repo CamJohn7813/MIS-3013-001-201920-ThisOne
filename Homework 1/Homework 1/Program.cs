@@ -10,24 +10,21 @@ namespace Homework_1
     {
         static void Main(string[] args)
         {
-            const double SALES_TAX = 0.085;//8.5%
-            string itemName;
+            const double sales_tax = 0.085;//8.5%
+            string item;
             int quantity;
             double price;
-            Console.Write("Item name: ");
-            itemName = Console.ReadLine();
-            Console.WriteLine("Enter " + itemName + " qunatity: ");
+            Console.Write("What is the product name of the item you are purchasing: ");
+            item = Console.ReadLine();
+            Console.WriteLine("How many " + item + " do you want to buy: ");
             quantity = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter " + itemName + "'s price: ");
+            Console.WriteLine("What is the price for each " + item + "?");
             price = double.Parse(Console.ReadLine());
-            //calculate subtotal
             double subTotal = quantity * price;
-            double salesTax = SALES_TAX * subTotal;
+            double salesTax = sales_tax * subTotal;
             double salesTotal = subTotal + salesTax;
-            //print
-            Console.WriteLine("Sub Total: " + subTotal.ToString("C") + "\nSales Tax: " + salesTax.ToString("C")
-            + "\nSales Total: " + salesTotal.ToString("C"));
-            //pause
+            Console.WriteLine("Your subtotal for your bill is: " + subTotal.ToString("C") + "\nYour sales tax for your bill is: " + salesTax.ToString("C")
+            + "\nYour total for your bill is: " + salesTotal.ToString("C"));
             Console.ReadLine();
         }
     }
